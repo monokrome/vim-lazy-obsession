@@ -23,7 +23,11 @@ function! LoadSession()
       call mkdir(b:session_directory, 'p')
     endif
 
-    execute 'Obsession ' b:session_filename
+    if !filereadable(b:session_filename)
+      execute 'Obsession ' b:session_filename
+    else
+      execute 'source ' b:session_filename
+    endif
   endif
 endfunction
 
