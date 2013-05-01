@@ -3,7 +3,10 @@ if exists('g:loaded_lazy_obsession')
 endif
 
 let g:loaded_lazy_obsession = 1
-let g:sessions_root = expand($HOME . '/.vim/tmp/sessions')
+
+if !exists('g:sessions_root')
+  let g:sessions_root = expand($HOME . '/.vim/sessions')
+endif
 
 function! LoadSession()
   if argc() > 0
