@@ -28,8 +28,6 @@ function! LoadSession()
     else
       execute 'mksession ' b:session_filename
     endif
-
-    echo b:session_filename
   endif
 endfunction
 
