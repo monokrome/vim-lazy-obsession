@@ -5,7 +5,13 @@ endif
 let g:loaded_lazy_obsession = 1
 
 if !exists('g:sessions_root')
-  let g:sessions_root = expand($HOME . '/.vim/sessions')
+  if has('win32') || has('win64')
+    let s:vim_home = expand($HOME . '/.vim')
+  else
+    let s:vim_home = expand($HOME . '/vimfiles')
+  endif
+
+  let g:sessions_root = expand(s:vim_home . '/sessions')
 endif
 
 function! LoadSession()
