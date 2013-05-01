@@ -23,11 +23,7 @@ function! LoadSession()
       call mkdir(b:session_directory, 'p')
     endif
 
-    if exists('g:loaded_obsession')
-      execute 'Obsession ' b:session_filename
-    else
-      execute 'mksession ' b:session_filename
-    endif
+    execute 'Obsession ' b:session_filename
   endif
 endfunction
 
