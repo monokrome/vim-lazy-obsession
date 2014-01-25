@@ -22,18 +22,20 @@ function! LoadSession()
   let b:session_directory = g:sessions_root . getcwd()
   let b:session_filename = b:session_directory . '/Session.vim'
 
-  if filereadable(b:session_filename)
-    execute 'source ' b:session_filename
-  else
+  if isdirectory(b:session_directory)
     if !isdirectory(b:session_directory) && !filereadable(b:session_directory)
       call mkdir(b:session_directory, 'p')
     endif
 
     if !filereadable(b:session_filename)
-      execute 'Obsession ' b:session_filename
+      execute 'Obsession ' . b:session_filename
     else
-      execute 'source ' b:session_filename
+      execute 'source ' . b:session_filename
     endif
+  endif
+
+  if filereadable(b:session_filename)
+    execute 'source ' b:session_filename
   endif
 endfunction
 
