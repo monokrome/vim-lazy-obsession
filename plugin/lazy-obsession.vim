@@ -6,9 +6,9 @@ let g:loaded_lazy_obsession = 1
 
 if !exists('g:sessions_root')
   if has('win32') || has('win64')
-    let s:vim_home = expand($HOME . '/.vim')
-  else
     let s:vim_home = expand($HOME . '/vimfiles')
+  else
+    let s:vim_home = expand($HOME . '/.vim')
   endif
 
   let g:sessions_root = expand(s:vim_home . '/sessions')
