@@ -20,7 +20,8 @@ function! LoadSession()
   endif
 
   let b:session_directory = g:sessions_root . getcwd()
-  let b:sesion_filename = 'Session.vim'
+
+  let b:session_filename = 'Session.vim'
   let b:session_path = b:session_directory . '/' . b:session_filename
 
   if isdirectory(b:session_directory)
@@ -29,7 +30,6 @@ function! LoadSession()
     endif
 
     if !filereadable(b:session_path)
-      echo b:session_path
       execute 'Obsession ' . b:session_path
     else
       execute 'source ' . b:session_path
