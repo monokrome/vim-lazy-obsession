@@ -38,4 +38,3 @@ function! LoadSession()
 endfunction
 
 autocmd VimEnter * nested :call LoadSession()
-
